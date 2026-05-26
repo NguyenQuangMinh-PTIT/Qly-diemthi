@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý điểm thi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Quản lý điểm thi</h2>
+        
+        <div class="form-group">
+            <label for="maSV">Mã sinh viên:</label>
+            <input type="text" id="maSV" placeholder="Nhập mã sinh viên">
+        </div>
+        <div class="form-group">
+            <label for="hoTen">Họ tên:</label>
+            <input type="text" id="hoTen" placeholder="Nhập họ tên">
+        </div>
+        <div class="form-group">
+            <label for="monHoc">Môn học:</label>
+            <input type="text" id="monHoc" placeholder="Nhập môn học">
+        </div>
+        <div class="form-group">
+            <label for="diemThi">Điểm thi:</label>
+            <input type="number" id="diemThi" placeholder="Nhập điểm thi (0-10)" step="0.1">
+        </div>
+        
+        <div id="errorMessage" class="error-message"></div>
+        
+        <button onclick="addExam()">Thêm điểm thi</button>
+
+        <table id="examTable">
+            <thead>
+                <tr>
+                    <th>Mã SV</th>
+                    <th>Họ tên</th>
+                    <th>Môn học</th>
+                    <th>Điểm thi</th>
+                </tr>
+            </thead>
+            <tbody id="examBody">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
