@@ -1,41 +1,12 @@
-const exams = [
-    {
-        maSV: "SV001",
-        hoTen: "Nguyen Van A",
-        monHoc: "Javascript",
-        diemThi: 8.5
-    },
-    {
-        maSV: "SV002",
-        hoTen: "Tran Thi B",
-        monHoc: "HTML CSS",
-        diemThi: 7
-    }
-];
-
-function renderTable() {
-    const tbody = document.getElementById('examBody');
-    tbody.innerHTML = '';
-
-    exams.forEach(exam => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${exam.maSV}</td>
-            <td>${exam.hoTen}</td>
-            <td>${exam.monHoc}</td>
-            <td>${exam.diemThi}</td>
-        `;
-        tbody.appendChild(tr);
-    });
-}
-
 function addExam() {
+
     const maSV = document.getElementById('maSV').value.trim();
     const hoTen = document.getElementById('hoTen').value.trim();
     const monHoc = document.getElementById('monHoc').value.trim();
     const diemThiStr = document.getElementById('diemThi').value.trim();
     const errorMessage = document.getElementById('errorMessage');
 
+    errorMessage.style.color = '#dc3545';
     errorMessage.innerText = '';
 
     if (!maSV || !hoTen || !monHoc || !diemThiStr) {
@@ -49,20 +20,11 @@ function addExam() {
         return;
     }
 
-    const newExam = {
-        maSV: maSV,
-        hoTen: hoTen,
-        monHoc: monHoc,
-        diemThi: diemThi
-    };
-    exams.push(newExam);
-
-    renderTable();
+    errorMessage.style.color = 'green';
+    errorMessage.innerText = 'Thêm điểm thi thành công!';
 
     document.getElementById('maSV').value = '';
     document.getElementById('hoTen').value = '';
     document.getElementById('monHoc').value = '';
     document.getElementById('diemThi').value = '';
 }
-
-renderTable();
